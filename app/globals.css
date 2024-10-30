@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.body{
+  font-family: "Poppins", sans-serif !important;
+}
+
+.landingImg{
+  height: 100vh;
+  background-image: url('/homeBg.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-container.landscape {
+  flex-direction: row;
+}
+
+.canvas-container {
+  flex: 1;
+  min-height: 50vh;
+}
+
+.ui-overlay {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  max-height: 50vh;
+  overflow-y: auto;
+}
+
+.landscape .ui-overlay {
+  width: 40%;
+  max-height: 100vh;
+}
+
+.conversation-history {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.message {
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.message.user {
+  background-color: #e6f2ff;
+  align-self: flex-end;
+}
+
+.message.ai {
+  background-color: #f0f0f0;
+  align-self: flex-start;
+}
+
+.input-container {
+  display: flex;
+  gap: 0.5rem;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.voice-button {
+  background-color: #28a745;
+}
+
+.voice-button.listening {
+  background-color: #dc3545;
+}
+
+.toggle-3d-button {
+  align-self: flex-end;
+  margin-bottom: 1rem;
+}
+
+.error-message {
+  background-color: #f8d7da;
+  border: 1px solid #f5c6cb;
+  color: #721c24;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .input-container {
+    flex-direction: column;
+  }
+
+  button {
+    width: 100%;
+  }
+}
